@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.5.0/css/ol.css" type="text/css"> //Creamos nuestro propio Mapa
+<script src="https://openlayers.org/en/v6.5.0/build/ol.js" type="text/javascript"></script>
+
+</head>
+
+<body 
+    <div style="width:100%; height:100%" id="map"></div>// MARCADO PARA EL MAPA, Genera un unico elemento
+
+<script>
+                           // MAPA Y lA VISTA (CAPAS CONTROLES INTERRACIONES )
+var map = new ol.Map({    
+  layers: [ 
+    new ol.layer.Tile({ 
+       source: new ol.source.OSM() 
+       }) 
+    ], 
+    target: 'map', 
+    view: new ol.View({ 
+      center: [0, 0], 
+      zoom: 2 
+    }) 
+});
+
+
+var view = new ol.View({ // VISTA EN 2D
+  center: [41.56, -4.63], 
+  zoom: 7 
+});
+
+
+
+map.addControl(new ol.control.ZoomSlider()); // CONTROL DEL ZOOM 
+
+</script>
+  
+</body>
+
+</html>
